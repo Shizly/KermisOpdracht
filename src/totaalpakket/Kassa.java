@@ -38,14 +38,20 @@ public class Kassa {
 		System.out.println(TKaartjes +" " +TOmzet);
 	}
 	public static void adminstratie() {
-		System.out.println("Druk op o om de omzet te zien.\nDruk op k om de kaartverkoop te zien");
 		Scanner scAdmin = new Scanner(System.in);
-		String KassaInzicht = scAdmin.nextLine();
-		if (KassaInzicht.equals("o")) {
-			System.out.println("De totale omzet is " + Kassa.TOmzet);
-		}
-		if (KassaInzicht.equals("k")) {
-			System.out.println("Het totaal aantal kaartjes verkocht is " + Kassa.TKaartjes);
+		boolean doorgaan = true;
+		while (doorgaan){
+			System.out.println("Druk op o om de omzet te zien.\nDruk op k om de kaartverkoop te zien\n Druk op q om te stoppen.");
+			String KassaInzicht = scAdmin.nextLine();
+			if (KassaInzicht.equals("o")) {
+				System.out.println("De totale omzet is " + Kassa.TOmzet);
+			}
+			if (KassaInzicht.equals("k")) {
+				System.out.println("Het totaal aantal kaartjes verkocht is " + Kassa.TKaartjes);
+			}
+			if (KassaInzicht.equals("q")) {
+				doorgaan = false;
+			}
 		}
 	}
 }

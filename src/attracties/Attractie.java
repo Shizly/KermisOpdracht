@@ -6,3 +6,8 @@ public class Attractie {
 	int opp;
 }
 
+interface GokAttractie {
+	public abstract void BelastingAfdragen();
+}
+
+
