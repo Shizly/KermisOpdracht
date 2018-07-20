@@ -37,11 +37,11 @@ public class Kassa {
 		TOmzet = (TOmzet+attracties.Spin.prijs);
 		System.out.println(TKaartjes +" " +TOmzet);
 	}
-	public static void adminstratie() {
+	public void adminstratie() {
 		Scanner scAdmin = new Scanner(System.in);
 		boolean doorgaan = true;
 		while (doorgaan){
-			System.out.println("Druk op o om de omzet te zien.\nDruk op k om de kaartverkoop te zien\n Druk op q om te stoppen.");
+			System.out.println("Druk op o om de omzet te zien.\nDruk op k om de kaartverkoop te zien\nDruk op q om te stoppen.");
 			String KassaInzicht = scAdmin.nextLine();
 			if (KassaInzicht.equals("o")) {
 				System.out.println("De totale omzet is " + Kassa.TOmzet);

@@ -3,7 +3,9 @@ import java.util.Scanner;
 import attracties.*;
 
 public class Entree {
-	public static void spelen() {
+	public void spelen() {
+		Botsautos botsautos = new Botsautos();
+		
 		System.out.println("Welkom op de Kermis! We hebben 6 attracties.\n1 = Botsauto's 2 = Spin\n3 = Spiegelpaleis 4 = Spookhuis\n5 = Hawaii 6 = Ladderklimmen");
 		
 		Boolean doorgaan = true;
@@ -13,7 +15,7 @@ public class Entree {
 			int scSpelen = scInp.nextInt();
 
 			switch (scSpelen) {
-				case 1: Botsautos.draaien();
+				case 1: botsautos.draaien();
 						Kassa.betaalbotsautos();
 					break;
 				case 2: Spin.draaien();

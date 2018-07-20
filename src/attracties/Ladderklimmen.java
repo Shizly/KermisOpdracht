@@ -20,5 +20,4 @@ public class Ladderklimmen extends Attractie implements GokAttractie{
 //	LadderKlimmen is een GokAttractie.
 //	GokAttracties moeten kansSpelBelastingBetalen(). De kansSpelBelasting is het reserveren van 30% over je omzet.
 
-	
 }
