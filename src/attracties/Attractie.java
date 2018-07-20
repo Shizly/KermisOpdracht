@@ -1,6 +1,6 @@
 package attracties;
 
-public class Attractie {	
+public abstract class Attractie {	
 	public String naam;
 	public double prijs;
 	public int opp;
@@ -15,7 +15,7 @@ public class Attractie {
 	}
 
 	public void draaien(){
-		System.out.println("U gaat naar het" +naam);
+		System.out.println("U koos voor " +naam);
 		omzet = (omzet+prijs);
 		kaartverk = (kaartverk+1);
 		System.out.println("De "+naam +" heeft " + omzet + "euro omgezet en "+kaartverk +" kaartjes verkocht.");

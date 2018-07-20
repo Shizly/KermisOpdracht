@@ -1,20 +1,21 @@
 package attracties;
 
-public class Spin extends Attractie{
+public class Spin extends Attractie implements RisicoRijkeAttracties{
 	public Spin(String naam, double prijs, int opp){
 		super(naam, prijs, opp);
+	}	
+	public int draailimiet = 5;
+	public boolean magdraaien = true;
+
+	public void opstellingsKeuring() {
+		if (kaartverk >= draailimiet) {
+			magdraaien = false;
+		}
 	}
-	
-//	String naam = "DraaiDraaiDraai";
-//	public static double prijs = 2.25;
-//	int opp = 25;
-//	static double omzet;
-//	static int kaartverk;
-//	
-//	public static void draaien(){
-//		System.out.println("De Spin draait");
-//		omzet = (omzet+prijs);
-//		kaartverk = (kaartverk+1);
-//		System.out.println("De Spin heeft " + omzet + "euro omgezet en "+kaartverk +" kaartjes verkocht.");
-	
 }
+
+//RisicoRijkeAttracties moeten een keuring ondergaan nadat ze opgesteld zijn. 
+//Deze methode heet dus opstellingsKeuring() en die returnt een boolean. 
+//
+//RisicoRijkeAttracties hebben een draaiLimiet. Dit is het aantal maal dat ze mogen draaien 
+//voordat er een onderhoudsbeurt moet plaatsvinden. Voor de Spin is dit 5 en voor de Hawaii is dit 10.

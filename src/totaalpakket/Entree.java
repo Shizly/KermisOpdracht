@@ -3,25 +3,13 @@ import java.util.Scanner;
 import attracties.*;
 
 public class Entree {
+
 	public void spelen() {
-		Attractie[] attracties;
-		Botsautos botsautos = new Botsautos("Botsauto's",2.50,80);
-		Hawaii hawaii = new Hawaii("Hawaii",2.90,30);
-		Ladderklimmen ladderklimmen = new Ladderklimmen ("Ladderklimmen",5.00,5);
-		Spiegelpaleis spiegelpaleis = new Spiegelpaleis ("Spiegelpaleis",2.45,40);
-		Spin spin = new Spin ("Spin",2.25,25);
-		Spookhuis spookhuis = new Spookhuis ("Spookhuis",3.20,60);
-		
-		attracties = new Attractie[6];
-        attracties[0] = botsautos;
-        attracties[1] = spin;
-        attracties[2] = spiegelpaleis;
-        attracties[3] = spookhuis;
-        attracties[4] = hawaii;
-        attracties[5] = ladderklimmen;
         
 		Kassa kassa = new Kassa();
-		System.out.println("Welkom op de Kermis! We hebben 6 attracties.\n1 = Botsauto's 2 = Spin\n3 = Spiegelpaleis 4 = Spookhuis\n5 = Hawaii 6 = Ladderklimmen");
+		System.out.println("Welkom op de Kermis! We hebben 6 attracties.\n1 = Botsauto's 2 = Spin\n3 = Spiegelpaleis 4 = Spookhuis"
+				+ "\n5 = Hawaii 6 = Ladderklimmen"
+				+"\nOm te stoppen typt u 9.");
 		
 		Boolean doorgaan = true;
 		while (doorgaan) {
@@ -30,34 +18,29 @@ public class Entree {
 			int scSpelen = scInp.nextInt();
 
 			switch (scSpelen) {
-				case 1: botsautos.draaien();
-						kassa.betaalbotsautos();
+				case 1: Kermisopdracht.botsautos.draaien();
+						kassa.betaal(Kermisopdracht.botsautos);
 					break;
-				case 2: spin.draaien();
-						kassa.betaalspin();
+				case 2: Kermisopdracht.spin.draaien();
+						kassa.betaal(Kermisopdracht.spin);
 					break;
-				case 3: spiegelpaleis.draaien();
-						kassa.betaalspiegelpaleis();
+				case 3: Kermisopdracht.spiegelpaleis.draaien();
+						kassa.betaal(Kermisopdracht.spiegelpaleis);
 					break;
-				case 4: spookhuis.draaien();
-						kassa.betaalspookhuis();
+				case 4: Kermisopdracht.spookhuis.draaien();
+						kassa.betaal(Kermisopdracht.spookhuis);
 					break;
-				case 5: hawaii.draaien();
-						kassa.betaalhawaii();
+				case 5: Kermisopdracht.hawaii.draaien();
+						kassa.betaal(Kermisopdracht.hawaii);
 					break;
-				case 6: ladderklimmen.draaien();
-						kassa.betaalladderklimmen();
+				case 6: Kermisopdracht.ladderklimmen.draaien();
+						kassa.betaal(Kermisopdracht.ladderklimmen);
+					break;
+				case 9: doorgaan = false;
+						System.out.println("Danku voor uw komst en tot ziens!");
 					break;
 				default: System.out.println("Dat was geen optie");
-			}
-			System.out.println("Wilt u nogmaals? Zeg 'nee' om te stoppen en 'ja' om door te gaan.");
-			Scanner scStop = new Scanner(System.in);
-			String scDoorgaan = scStop.nextLine();
-			if(scDoorgaan.equals("nee")) {
-				doorgaan = false;
-				System.out.println("Danku voor uw komst en tot ziens!");
 			}	
 		}
-		
 	}
 }
