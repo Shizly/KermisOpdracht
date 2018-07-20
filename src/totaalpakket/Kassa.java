@@ -3,38 +3,45 @@ import java.util.Scanner;
 
 import attracties.*;
 
-public class Kassa {
+public class Kassa{
 	static double TOmzet = 0.00;
 	static int TKaartjes = 0;
 	
-	public static void betaalbotsautos() {
+	Botsautos botsauto = new Botsautos("Botsauto's",2.50,80);
+	Hawaii hawaii = new Hawaii("Hawaii",2.90,30);
+	Ladderklimmen ladderklimmen = new Ladderklimmen ("Ladderklimmen",5.00,5);
+	Spiegelpaleis spiegelpaleis = new Spiegelpaleis ("Spiegelpaleis",2.45,40);
+	Spin spin = new Spin ("Spin",2.25,25);
+	Spookhuis spookhuis = new Spookhuis ("Spookhuis",3.20,60);
+
+	public void betaalbotsautos() {
 		TKaartjes = (TKaartjes+1);
-		TOmzet = (TOmzet+attracties.Botsautos.prijs);
+		TOmzet = (TOmzet+botsauto.prijs);
 		System.out.println(TKaartjes +" " +TOmzet);	
 	}
-	public static void betaalhawaii() {
+	public void betaalhawaii() {
 		TKaartjes = (TKaartjes+1);
-		TOmzet = (TOmzet+attracties.Hawaii.prijs);
+		TOmzet = (TOmzet+hawaii.prijs);
 		System.out.println(TKaartjes +" " +TOmzet);
 	}
-	public static void betaalladderklimmen() {
+	public void betaalladderklimmen() {
 		TKaartjes = (TKaartjes+1);
-		TOmzet = (TOmzet+attracties.Ladderklimmen.prijs);
+		TOmzet = (TOmzet+ladderklimmen.prijs);
 		System.out.println(TKaartjes +" " +TOmzet);
 	}
-	public static void betaalspiegelpaleis() {
+	public void betaalspiegelpaleis() {
 		TKaartjes = (TKaartjes+1);
-		TOmzet = (TOmzet+attracties.Spiegelpaleis.prijs);
+		TOmzet = (TOmzet+spiegelpaleis.prijs);
 		System.out.println(TKaartjes +" " +TOmzet);
 	}
-	public static void betaalspin() {
+	public void betaalspin() {
 		TKaartjes = (TKaartjes+1);
-		TOmzet = (TOmzet+attracties.Spin.prijs);
+		TOmzet = (TOmzet+spin.prijs);
 		System.out.println(TKaartjes +" " +TOmzet);
 	}
-	public static void betaalspookhuis() {
+	public void betaalspookhuis() {
 		TKaartjes = (TKaartjes+1);
-		TOmzet = (TOmzet+attracties.Spin.prijs);
+		TOmzet = (TOmzet+spookhuis.prijs);
 		System.out.println(TKaartjes +" " +TOmzet);
 	}
 	public void adminstratie() {

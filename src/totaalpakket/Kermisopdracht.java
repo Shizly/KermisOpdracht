@@ -6,9 +6,6 @@ import java.util.Scanner;
 
 public class Kermisopdracht {
 	public static void main (String[] args) {
-		ArrayList<Attractie> attracties = new ArrayList();
-//		attracties.add(new Attractie("Botsauto's", 1.25, 12));
-		System.out.println("Dit is ons assortiment " +attracties);
 		
 		Entree entree = new Entree();
 		Kassa kassa = new Kassa();
