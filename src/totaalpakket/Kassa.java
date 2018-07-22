@@ -9,10 +9,9 @@ public class Kassa{
 	
 	BelastingInspecteur belastinginspecteur = new BelastingInspecteur();
 	
-	public void betaal(Attractie attracties) {
-		TKaartjes = (TKaartjes+1);
-		TOmzet = (TOmzet+attracties.prijs);
-		System.out.println("Totale kaartjes: "+TKaartjes +" totale omzet: " +TOmzet);	
+	public void betaal(Attractie attracties) {		// deze methode wordt door een attractie uitgevoerd. Word opgeroepen in class "Entree"
+		TKaartjes = (TKaartjes+1);					//deze regel verhoogt het aantal kaartjes met 1
+		TOmzet = (TOmzet+attracties.prijs);			//deze regel verhoogt de TOmzet met de prijs van de attractie die deze methode uitvoert
 	}
 
 	public void adminstratie() {
@@ -32,8 +31,9 @@ public class Kassa{
 				doorgaan = false;
 			}
 			if (KassaInzicht.equals("b")) {
-				BelastingInspecteur.Betalen(Kermisopdracht.ladderklimmen);
-				BelastingInspecteur.Betalen(Kermisopdracht.spin);
+				System.out.println("Pas op! Het is de belastinginspecteur!");
+				BelastingInspecteur.Betalen(Kermisopdracht.ladderklimmen); 
+				BelastingInspecteur.Betalen(Kermisopdracht.spin); //Belastinginspecteur gaat methode Betalen uitvoeren en het object spin wordt meegestuurd
 			}			
 		}
 	}

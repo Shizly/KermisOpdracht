@@ -4,6 +4,8 @@ public interface RisicoRijkeAttracties {
 	public void opstellingsKeuring();
 }
 
+// Omschrijving van deze stap volgens weekopdracht:
+
 //RisicoRijkeAttracties moeten een keuring ondergaan nadat ze opgesteld zijn. 
 //Deze methode heet dus opstellingsKeuring() en die returnt een boolean. 
 //

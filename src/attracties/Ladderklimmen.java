@@ -11,7 +11,7 @@ public class Ladderklimmen extends Attractie implements GokAttractie{
 
 	public void BelastingAfdragen() {
 		double belastingres = (omzetb * 0.3);
-		System.out.println(belastingres +" euro naar de belasting");
+		System.out.println(belastingres +" euro van de omzet van " +naam + " naar de belasting.");
 		Kassa.TOmzet = (Kassa.TOmzet - belastingres);
 		omzet = (omzet - belastingres);
 		omzetb = 0;

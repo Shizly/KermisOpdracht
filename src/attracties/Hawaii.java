@@ -5,11 +5,12 @@ public class Hawaii extends Attractie implements RisicoRijkeAttracties{
 		super(naam, prijs, opp);
 	}
 	public int draailimiet = 10;
+	public int rondjesSindsKeur;
 	public boolean magdraaien = true;
 
 	public void opstellingsKeuring() {
-		if (kaartverk >= draailimiet) {
-			magdraaien = false;
+		if (rondjesSindsKeur >= draailimiet) { 
+			magdraaien = false;	
 		}
-	}
+	}	
 }
