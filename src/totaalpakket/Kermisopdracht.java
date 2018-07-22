@@ -51,7 +51,7 @@ public class Kermisopdracht {
 			}
 			if (scKeuze.equals("q")) {  //dit beëindigd de while-loop
 				doorgaan = false;
-			}
-		}
+			} 
+		} 
 	}
 }

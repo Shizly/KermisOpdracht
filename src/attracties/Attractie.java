@@ -13,11 +13,11 @@ public abstract class Attractie {
 	 	this.prijs= prijs;
 	 	this.opp= opp;
 	}
-
 	public void draaien(){						//elke sub-class kan deze methode uitvoeren.
 		System.out.println("U koos voor " +naam);	//welke attractie gekozen werd
 		omzet = (omzet+prijs);						// verhoogt de omzet met de prijs van de attractie
 		kaartverk = (kaartverk+1);					// verhoogt het aantal verkochte kaartjes met 1
-		System.out.println("De "+naam +" heeft " + omzet + "euro omgezet en "+kaartverk +" kaartjes verkocht.");
+		String afgerondeOmzet = String.format("%.2f", omzet);   //rond de double af op 2 decimalen
+		System.out.println("De "+naam +" heeft " + afgerondeOmzet + " euro omgezet en "+kaartverk +" kaartjes verkocht.");
 	}
 }
