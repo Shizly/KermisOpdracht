@@ -1,6 +1,8 @@
 package attracties;
 
-public class Spin extends Attractie implements RisicoRijkeAttracties{
+import totaalpakket.Kassa;
+
+public class Spin extends Attractie implements RisicoRijkeAttracties, GokAttractie{
 	public Spin(String naam, double prijs, int opp){
 		super(naam, prijs, opp);
 	}	
@@ -8,14 +10,17 @@ public class Spin extends Attractie implements RisicoRijkeAttracties{
 	public boolean magdraaien = true;
 
 	public void opstellingsKeuring() {
-		if (kaartverk >= draailimiet) {
+		if (kaartverk == draailimiet) {
 			magdraaien = false;
 		}
 	}
+	public double omzetb;
+	
+	public void BelastingAfdragen() {
+		double belastingres = (omzetb * 0.3);
+		System.out.println(belastingres +" euro naar de belasting");
+		Kassa.TOmzet = (Kassa.TOmzet - belastingres);
+		omzet = (omzet - belastingres);
+		omzetb = 0;
+	}
 }
-
-//RisicoRijkeAttracties moeten een keuring ondergaan nadat ze opgesteld zijn. 
-//Deze methode heet dus opstellingsKeuring() en die returnt een boolean. 
-//
-//RisicoRijkeAttracties hebben een draaiLimiet. Dit is het aantal maal dat ze mogen draaien 
-//voordat er een onderhoudsbeurt moet plaatsvinden. Voor de Spin is dit 5 en voor de Hawaii is dit 10.

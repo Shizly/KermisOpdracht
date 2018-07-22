@@ -4,7 +4,7 @@ import java.util.Scanner;
 import attracties.*;
 
 public class Kassa{
-	static double TOmzet = 0.00;
+	public static double TOmzet = 0.00;
 	static int TKaartjes = 0;
 	
 	BelastingInspecteur belastinginspecteur = new BelastingInspecteur();
@@ -32,14 +32,9 @@ public class Kassa{
 				doorgaan = false;
 			}
 			if (KassaInzicht.equals("b")) {
-				Betalen(Kermisopdracht.ladderklimmen);
-				TOmzet = (TOmzet - Kermisopdracht.ladderklimmen.belastingres);
-			System.out.println("Belasting");
+				BelastingInspecteur.Betalen(Kermisopdracht.ladderklimmen);
+				BelastingInspecteur.Betalen(Kermisopdracht.spin);
 			}			
 		}
-	}
-	private void Betalen(GokAttractie overdragen1) {
-		overdragen1.BelastingAfdragen();
-		System.out.println("Belasting afgedragen");	
 	}
 }

@@ -21,8 +21,12 @@ public class Entree {
 				case 1: Kermisopdracht.botsautos.draaien();
 						kassa.betaal(Kermisopdracht.botsautos);
 					break;
-				case 2: Kermisopdracht.spin.draaien();
-						kassa.betaal(Kermisopdracht.spin);
+				case 2: if (Kermisopdracht.spin.magdraaien == true) {
+							Kermisopdracht.spin.draaien();
+							kassa.betaal(Kermisopdracht.spin);
+							Kermisopdracht.spin.omzetb = (Kermisopdracht.spin.omzetb + Kermisopdracht.spin.prijs);
+							Kermisopdracht.spin.opstellingsKeuring();
+						}
 					break;
 				case 3: Kermisopdracht.spiegelpaleis.draaien();
 						kassa.betaal(Kermisopdracht.spiegelpaleis);
@@ -35,6 +39,7 @@ public class Entree {
 					break;
 				case 6: Kermisopdracht.ladderklimmen.draaien();
 						kassa.betaal(Kermisopdracht.ladderklimmen);
+						Kermisopdracht.ladderklimmen.omzetb = (Kermisopdracht.ladderklimmen.omzetb + Kermisopdracht.ladderklimmen.prijs);
 					break;
 				case 9: doorgaan = false;
 						System.out.println("Danku voor uw komst en tot ziens!");
